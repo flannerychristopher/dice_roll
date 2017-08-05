@@ -17,3 +17,11 @@ for (i = 1; i < 99; i++) {
   option.innerHTML = i
   selectSideInput.appendChild(option);
 }
+
+let dice = {
+  sides: 6,
+  roll: function() {
+    let result = Math.floor(Math.random() * this.sides) + 1;
+    return result;
+  }
+}
