@@ -25,3 +25,27 @@ let dice = {
     return result;
   }
 }
+
+button.addEventListener("click", function() {
+  console.log("test");
+  dice.sides = parseInt(sideInput.value);
+  let dieNumber = parseInt(dieInput.value);
+
+  for (i = 0; i < dieNumber; i++) {
+    let result = dice.roll();
+    results[i] = result;
+    console.log(results);
+  }
+
+  let resultHTML = '<ul>';
+  let resultSum = 0;
+  for (i = 0; i < results.length; i++) {
+    resultHTML += '<li>' + results[i] + '</li>';
+    resultHTML += ' ';
+    resultSum += results[i];
+  }
+  resultHTML += '</ul>';
+  resultHTML += '<p> for a total of: ' + resultSum + '</p>';
+
+  resultDiv.innerHTML = resultHTML;
+});
